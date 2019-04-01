@@ -92,7 +92,7 @@ def handle_follow(event):
                                     image_size="cover",
                                     actions=[
                                         MessageTemplateAction(
-                                            label='自我介紹', text='自我介紹'
+                                            label='自我介紹', text='自我介紹'   
                                         ),
                                         MessageTemplateAction(
                                             label='程式語言', text='Python'
@@ -110,7 +110,7 @@ def handle_follow(event):
         event.reply_token,[
         TextSendMessage(text='您好！我是柏丞，可以透過下列選單了解我更多喔！'), 
         StickerSendMessage(package_id=1, sticker_id=13),
-        TemplateSendMessage(alt_text="可以輸入下列關鍵字，獲得更多資訊喔！\n可以輸入'自我介紹'",template=button_template_message)
+        TemplateSendMessage(alt_text="可以輸入下列關鍵字，獲得更多資訊喔！\n可以輸入'自我介紹'、'程式語言'",template=button_template_message)
     ])
 
 # 處理訊息
