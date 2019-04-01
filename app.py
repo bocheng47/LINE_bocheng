@@ -95,10 +95,10 @@ def handle_follow(event):
                                             label='自我介紹', text='自我介紹'   
                                         ),
                                         MessageTemplateAction(
-                                            label='程式語言', text='Python'
+                                            label='程式語言', text='程式語言'
                                         ),
                                         MessageTemplateAction(
-                                            label='工作經驗', text='很多'
+                                            label='工作經驗', text='工作經驗'
                                         ),
                                         URITemplateAction(
                                             label='Github', uri='https://github.com/bocheng47/LINE_bocheng'
@@ -110,7 +110,7 @@ def handle_follow(event):
         event.reply_token,[
         TextSendMessage(text='您好！我是柏丞，可以透過下列選單了解我更多喔！'), 
         StickerSendMessage(package_id=1, sticker_id=13),
-        TemplateSendMessage(alt_text="可以輸入下列關鍵字，獲得更多資訊喔！\n可以輸入'自我介紹'、'程式語言'",template=button_template_message)
+        TemplateSendMessage(alt_text="這是柏丞自我介紹Line Rob\n可以輸入下列關鍵字，獲得更多資訊喔！\n輸入'自我介紹'、'程式語言'",template=button_template_message)
     ])
 
 # 處理訊息
@@ -127,13 +127,22 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text="哈囉, 我是柏丞"))
 
-    elif 'Github' in msg :
+    elif '程式語言' in msg :
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text="https://github.com/bocheng47/LINE_bocheng"))
+            TextSendMessage(text="我會的語言有：Python、PHP"))
+
+    elif 'Github' in msg :
+        uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
+        line_bot_api.reply_message(event.reply_token,
+            TextSendMessage(text=uri))
     
     else :
-        line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=event.message.text))
+        line_bot_api.reply_message(
+        event.reply_token,
+            TextSendMessage(text="您好！我是柏丞\n可以輸入下列關鍵字，獲得更多資訊喔！\n輸入'自我介紹'、'程式語言'、'工作經驗'、'GitHub'") 
+        )
+        #line_bot_api.reply_message(event.reply_token,
+        #    TextSendMessage(text=event.message.text))
 
 import os
 if __name__ == "__main__":
