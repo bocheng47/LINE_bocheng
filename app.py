@@ -118,6 +118,27 @@ def handle_message(event):
 
 Hi-health technology co.： https://github.com/bocheng47/hihealth"""
 
+    button_template_message =ButtonsTemplate(
+        thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
+        title='施柏丞自我介紹Line Rob', 
+        text='可以透過下列選項了解我喔！',
+        image_size="cover",
+        actions=[
+        MessageTemplateAction(
+            label='自我介紹', text='自我介紹'   
+        ),
+        MessageTemplateAction(
+            label='程式能力', text='程式能力'
+        ),
+        MessageTemplateAction(
+            label='工作經驗', text='工作經驗'
+        ),
+        MessageTemplateAction(
+            label='Github', text='Github'
+        ),
+        ]
+    )
+
     if ('hello' in msg) or ('早安' in msg) or ('你好' in msg):
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text="哈囉, 祝你有愉快的一天"))
