@@ -136,7 +136,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text="系網站、實習"))
 
-    elif 'Github' in msg :
+    elif 'github' in msg :
         #uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text="https://github.com/bocheng47/LINE_bocheng"))
