@@ -17,50 +17,6 @@ line_bot_api = LineBotApi('h36DEiW/iRpAgib0ryeNQmVAuKX6eaqEKzCj5QoT/2oXYXnRwFj9h
 # Channel Secret
 handler = WebhookHandler('d57f500b5ac8ede281c2b196e1ad547b')
 
-# Rich menu
-
-import requests
-import json
-
-headers = {"Authorization":"Bearer 3Ma92PMIfy790Z...","Content-Type":"application/json"}
-
-body = {
-    "size": {"width": 2500, "height": 1686},
-    "selected": "true",
-    "name": "Controller",
-    "chatBarText": "Controller",
-    "areas":[
-        {
-          "bounds": {"x": 551, "y": 325, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "up"}
-        },
-        {
-          "bounds": {"x": 876, "y": 651, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "right"}
-        },
-        {
-          "bounds": {"x": 551, "y": 972, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "down"}
-        },
-        {
-          "bounds": {"x": 225, "y": 651, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "left"}
-        },
-        {
-          "bounds": {"x": 1433, "y": 657, "width": 367, "height": 367},
-          "action": {"type": "message", "text": "btn b"}
-        },
-        {
-          "bounds": {"x": 1907, "y": 657, "width": 367, "height": 367},
-          "action": {"type": "message", "text": "btn a"}
-        }
-    ]
-  }
-
-req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu', 
-                       headers=headers,data=json.dumps(body).encode('utf-8'))
-
-
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -82,7 +38,7 @@ def handle_follow(event):
     print("in Follow")
     default = "可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub"
     button_template_message =ButtonsTemplate(
-                                    thumbnail_image_url="https://i.imgur.com/eTldj2E.png?1",
+                                    thumbnail_image_url="https://ppt.cc/f2nSXx",
                                     title='施柏丞自我介紹Line Rob', 
                                     text='可以透過下列選項了解我喔！',
                                     image_size="cover",
@@ -140,16 +96,14 @@ def handle_message(event):
 使用過的框架有：Laravel
 """
 
-    experience = """（一）
-中央資管系網站開發
+    experience = """（一）中央資管系網站開發
 
 時間：2018/08-至今
 
 職責：負責系網站全端開發與架設、資料上傳、提供網頁架構圖與程式註解。藉此深入學習PHP、MySQL、Laravel、Git共同開發、MVC架構；在這5人團隊中，我負責團隊的組織，以及與系辦接洽的工作。並從中學習團隊間的互相合作，以及一起討論UI/UX設計，取得共識，並互相指導，提升技術能力。
 
 
-（二）
-您好健康有限公司(程式設計實習生)
+(二) 您好健康有限公司(程式設計實習生)
 
 時間：2018/08-至今
 
