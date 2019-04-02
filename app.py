@@ -116,17 +116,15 @@ def handle_message(event):
 
     msg = (event.message.text).lower()
 
-    default = ('您好！我是柏丞 '0x100079'\n\n'
-            '可以輸入下列關鍵字，獲得更多資訊喔！\n\n'
-            '輸入：自我介紹、程式語言、工作經驗、GitHub')
+    initial = '您好！我是柏丞 '0x100079'\n\n可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub'
 
-    intro = 
+    #intro = 
 
-    language = 
+    #language = 
 
-    experience = 
+    #experience = 
 
-    github = ('Line Rob： https://github.com/bocheng47/LINE_bocheng \n '
+    github = ('Line Rob： https://github.com/bocheng47/LINE_bocheng \n' 
             '中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt\n '
             'Hi-health technology co.： https://github.com/bocheng47/hihealth')
 
