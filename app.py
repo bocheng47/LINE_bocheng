@@ -118,6 +118,7 @@ def handle_follow(event):
 def handle_message(event):
 
     msg = (event.message.text).lower()
+    intro = "您好！我是柏丞\n可以輸入下列關鍵字，獲得更多資訊喔！\n輸入<自我介紹>、<程式語言>、<工作經驗>、<GitHub>"
 
     if 'hello' in msg :
         line_bot_api.reply_message(event.reply_token,
@@ -131,15 +132,18 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text="我會的語言有：Python、PHP"))
 
-    elif 'Github' in msg :
-        uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
+    elif '工作經驗' in msg :
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=uri))
+            TextSendMessage(text="系網站、實習"))
+
+    elif 'Github' in msg :
+        #uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
+        line_bot_api.reply_message(event.reply_token,
+            TextSendMessage(text="https://github.com/bocheng47/LINE_bocheng"))
     
     else :
-        line_bot_api.reply_message(
-        event.reply_token,
-            TextSendMessage(text="您好！我是柏丞\n可以輸入下列關鍵字，獲得更多資訊喔！\n輸入'自我介紹'、'程式語言'、'工作經驗'、'GitHub'") 
+        line_bot_api.reply_message(event.reply_token,
+            TextSendMessage(text=intro) 
         )
         #line_bot_api.reply_message(event.reply_token,
         #    TextSendMessage(text=event.message.text))
