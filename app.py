@@ -68,7 +68,7 @@ def handle_follow(event):
     line_bot_api.reply_message(
         event.reply_token,[
         TextSendMessage(text=default), 
-        TemplateSendMessage(template=button_template_message),
+        TemplateSendMessage(alt_text = "電腦板無法顯示選單\U0001F614",template=button_template_message),
         StickerSendMessage(package_id=1, sticker_id=13),
     ])
 
