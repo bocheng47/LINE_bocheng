@@ -80,8 +80,8 @@ def callback():
 @handler.add(FollowEvent)
 def handle_follow(event):
     print("in Follow")
-    default = ("可以輸入下列關鍵字，獲得更多資訊喔！\n\n"
-            "輸入：自我介紹、程式語言、工作經驗、GitHub")
+    #default = ("可以輸入下列關鍵字，獲得更多資訊喔！\n\n"
+    #        "輸入：自我介紹、程式語言、工作經驗、GitHub")
     button_template_message =ButtonsTemplate(
                                     thumbnail_image_url="https://i.imgur.com/eTldj2E.png?1",
                                     title='施柏丞自我介紹Line Rob', 
@@ -107,7 +107,7 @@ def handle_follow(event):
         event.reply_token,[
         TextSendMessage(text='您好！我是柏丞，可以透過下列選單了解我更多喔！'), 
         StickerSendMessage(package_id=1, sticker_id=13),
-        TemplateSendMessage(alt_text=default,template=button_template_message)
+        TemplateSendMessage(alt_text="可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub",template=button_template_message)
     ])
 
 # 處理訊息
@@ -116,7 +116,7 @@ def handle_message(event):
 
     msg = (event.message.text).lower()
 
-    initial = '您好！我是柏丞 '0x100079'\n\n可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub'
+    default = ('您好！我是柏丞 '0x100079'\n\n可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub'
 
     #intro = 
 
@@ -124,9 +124,9 @@ def handle_message(event):
 
     #experience = 
 
-    github = ('Line Rob： https://github.com/bocheng47/LINE_bocheng \n' 
-            '中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt\n '
-            'Hi-health technology co.： https://github.com/bocheng47/hihealth')
+    #github = ('Line Rob： https://github.com/bocheng47/LINE_bocheng \n ' 
+    #        '中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt\n '
+    #        'Hi-health technology co.： https://github.com/bocheng47/hihealth')
 
     if 'hello' in msg :
         line_bot_api.reply_message(event.reply_token,
