@@ -116,8 +116,8 @@ def handle_message(event):
     msg = (event.message.text).lower()
 
     default = """您好！我是柏丞 \U0001F604
-    可以輸入下列關鍵字，獲得更多資訊喔！
-    輸入：自我介紹、程式語言、工作經驗、GitHub"""
+可以輸入下列關鍵字，獲得更多資訊喔！
+輸入：自我介紹、程式語言、工作經驗、GitHub"""
 
     #intro = 
 
