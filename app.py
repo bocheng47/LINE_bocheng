@@ -116,7 +116,7 @@ def handle_message(event):
 
     msg = (event.message.text).lower()
 
-    default = '您好！我是柏丞 '0x100079'\n\n可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub'
+    asdw = "您好！我是柏丞 '0x100079'\n\n可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub"
 
     #intro = 
 
@@ -147,11 +147,11 @@ def handle_message(event):
     elif 'github' in msg :
         #uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=github))
+            TextSendMessage(text="1"))
     
     else :
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=default) 
+            TextSendMessage(text=asdw) 
         )
         #line_bot_api.reply_message(event.reply_token,
         #    TextSendMessage(text=event.message.text))
