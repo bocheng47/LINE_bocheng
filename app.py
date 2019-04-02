@@ -36,7 +36,14 @@ def callback():
 @handler.add(FollowEvent)
 def handle_follow(event):
     print("in Follow")
-    default = "可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub"
+    default = """您好！我是柏丞 \U0001F604
+
+可以輸入下列關鍵字，獲得更多資訊喔！
+
+輸入：自我介紹、程式語言、工作經驗、GitHub
+
+或是透過下方選單選取喔～"""
+
     button_template_message =ButtonsTemplate(
                                     thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
                                     title='施柏丞自我介紹Line Rob', 
@@ -60,8 +67,8 @@ def handle_follow(event):
                                 
     line_bot_api.reply_message(
         event.reply_token,[
-        TextSendMessage(text='您好！我是柏丞\U0001F604，可以透過下列選單了解我更多喔！'), 
-        TemplateSendMessage(alt_text=default,template=button_template_message),
+        TextSendMessage(text=default), 
+        TemplateSendMessage(template=button_template_message),
         StickerSendMessage(package_id=1, sticker_id=13),
     ])
 
