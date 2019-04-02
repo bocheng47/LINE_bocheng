@@ -75,7 +75,9 @@ def handle_message(event):
 
 可以輸入下列關鍵字，獲得更多資訊喔！
 
-輸入：自我介紹、程式語言、工作經驗、GitHub"""
+輸入：自我介紹、程式語言、工作經驗、GitHub
+
+或是透過下方選單選取喔～"""
 
     intro = """我是施柏丞，目前就讀於中央大學資管系
 
@@ -125,7 +127,7 @@ Hi-health technology co.： https://github.com/bocheng47/hihealth"""
             TextSendMessage(text=intro),
             StickerSendMessage(package_id=1, sticker_id=114),])
 
-    elif '程式語言' in msg :
+    elif '程式能力' in msg :
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text=ability))
 
@@ -138,9 +140,10 @@ Hi-health technology co.： https://github.com/bocheng47/hihealth"""
             TextSendMessage(text=github))
     
     else :
-        line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=default) 
-        )
+        line_bot_api.reply_message(event.reply_token,[
+            TextSendMessage(text=default),
+            TemplateSendMessage(alt_text=default,template=button_template_message) 
+        ])
 
 import os
 if __name__ == "__main__":
