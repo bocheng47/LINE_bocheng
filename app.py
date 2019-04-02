@@ -38,7 +38,7 @@ def handle_follow(event):
     print("in Follow")
     default = "可以輸入下列關鍵字，獲得更多資訊喔！\n\n輸入：自我介紹、程式語言、工作經驗、GitHub"
     button_template_message =ButtonsTemplate(
-                                    thumbnail_image_url="https://ppt.cc/f2nSXx",
+                                    thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
                                     title='施柏丞自我介紹Line Rob', 
                                     text='可以透過下列選項了解我喔！',
                                     image_size="cover",
