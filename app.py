@@ -118,7 +118,14 @@ def handle_follow(event):
 def handle_message(event):
 
     msg = (event.message.text).lower()
-    intro = "您好！我是柏丞\n可以輸入下列關鍵字，獲得更多資訊喔！\n輸入<自我介紹>、<程式語言>、<工作經驗>、<GitHub>"
+    
+    default = ("您好！我是柏丞\n"
+            "可以輸入下列關鍵字，獲得更多資訊喔！\n"
+            "輸入<自我介紹>、<程式語言>、<工作經驗>、<GitHub>")
+
+    github = ("Line Rob： https://github.com/bocheng47/LINE_bocheng \n "
+            "中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt\n "
+            "Hi-health technology co.： https://github.com/bocheng47/hihealth")
 
     if 'hello' in msg :
         line_bot_api.reply_message(event.reply_token,
@@ -139,11 +146,11 @@ def handle_message(event):
     elif 'github' in msg :
         #uri = "https://github.com/bocheng47/LINE_bocheng" + titleURL['href']
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text="https://github.com/bocheng47/LINE_bocheng"))
+            TextSendMessage(text=github))
     
     else :
         line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text=intro) 
+            TextSendMessage(text=default) 
         )
         #line_bot_api.reply_message(event.reply_token,
         #    TextSendMessage(text=event.message.text))
