@@ -3,6 +3,6 @@
 
 我的 QRCODE
 
-![image](https://qr-official.line.me/M/av-ImY4MZS.png)
+![image](https://github.com/bocheng47/LINE_bocheng/raw/bocheng/QRcode/png)
 
 或是手機直接點選 https://line.me/R/ti/p/av-ImY4MZS
