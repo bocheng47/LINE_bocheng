@@ -60,9 +60,9 @@ def handle_follow(event):
                                 
     line_bot_api.reply_message(
         event.reply_token,[
-        TextSendMessage(text='您好！我是柏丞，可以透過下列選單了解我更多喔！'), 
+        TextSendMessage(text='您好！我是柏丞\U0001F604，可以透過下列選單了解我更多喔！'), 
+        TemplateSendMessage(alt_text=default,template=button_template_message),
         StickerSendMessage(package_id=1, sticker_id=13),
-        TemplateSendMessage(alt_text=default,template=button_template_message)
     ])
 
 # 處理訊息
