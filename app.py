@@ -34,47 +34,6 @@ def callback():
         abort(400)
     return 'OK'
 
-
-headers = {"Authorization":"Bearer 3Ma92PMIfy790Z...","Content-Type":"application/json"}
-
-body = {
-    "size": {"width": 2500, "height": 1686},
-    "selected": "true",
-    "name": "bocheng-menu",
-    "chatBarText": "點我收合選單",
-    "areas":[
-        {
-          "bounds": {"x": 551, "y": 325, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "up"}
-        },
-        {
-          "bounds": {"x": 876, "y": 651, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "right"}
-        },
-        {
-          "bounds": {"x": 551, "y": 972, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "down"}
-        },
-        {
-          "bounds": {"x": 225, "y": 651, "width": 321, "height": 321},
-          "action": {"type": "message", "text": "left"}
-        },
-        {
-          "bounds": {"x": 1433, "y": 657, "width": 367, "height": 367},
-          "action": {"type": "message", "text": "btn b"}
-        },
-        {
-          "bounds": {"x": 1907, "y": 657, "width": 367, "height": 367},
-          "action": {"type": "message", "text": "btn a"}
-        }
-    ]
-}
-
-req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu', 
-                       headers=headers,data=json.dumps(body).encode('utf-8'))
-
-print(req.text)
-
 # 預設訊息
 @handler.add(FollowEvent)
 def handle_follow(event):
@@ -86,6 +45,48 @@ def handle_follow(event):
 輸入：自我介紹、程式語言、工作經驗、GitHub
 
 或是透過下方選單選取喔～"""
+    
+
+    headers = {"Authorization":"Bearer 3Ma92PMIfy790Z...","Content-Type":"application/json"}
+
+    body = {
+        "size": {"width": 2500, "height": 1686},
+        "selected": "true",
+        "name": "bocheng-menu",
+        "chatBarText": "點我收合選單",
+        "areas":[
+            {
+                "bounds": {"x": 551, "y": 325, "width": 321, "height": 321},
+                "action": {"type": "message", "text": "up"}
+            },
+            {
+                "bounds": {"x": 876, "y": 651, "width": 321, "height": 321},
+                "action": {"type": "message", "text": "right"}
+            },
+            {
+                "bounds": {"x": 551, "y": 972, "width": 321, "height": 321},
+                "action": {"type": "message", "text": "down"}
+            },
+            {
+                "bounds": {"x": 225, "y": 651, "width": 321, "height": 321},
+                "action": {"type": "message", "text": "left"}
+            },
+            {
+                "bounds": {"x": 1433, "y": 657, "width": 367, "height": 367},
+                "action": {"type": "message", "text": "btn b"}
+            },
+            {
+                "bounds": {"x": 1907, "y": 657, "width": 367, "height": 367},
+                "action": {"type": "message", "text": "btn a"}
+            }
+        ]
+    }
+
+    req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu', 
+                       headers=headers,data=json.dumps(body).encode('utf-8'))
+
+    print(req.text)
+
 
     button_template_message =ButtonsTemplate(
                                     thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
