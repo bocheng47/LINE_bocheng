@@ -19,17 +19,6 @@ line_bot_api = LineBotApi('h36DEiW/iRpAgib0ryeNQmVAuKX6eaqEKzCj5QoT/2oXYXnRwFj9h
 # Channel Secret
 handler = WebhookHandler('d57f500b5ac8ede281c2b196e1ad547b')
 
-rich_menu_to_create = RichMenu(
-    size=RichMenuSize(width=2500, height=843),
-    selected=False,
-    name="Nice richmenu",
-    chat_bar_text="Tap here",
-    areas=[RichMenuArea(
-        bounds=RichMenuBounds(x=0, y=0, width=2500, height=843),
-        action=URIAction(label='Go to line.me', uri='https://line.me'))]
-)
-rich_menu_id = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
-
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -56,8 +45,19 @@ def handle_follow(event):
 輸入：自我介紹、程式語言、工作經驗、GitHub
 
 或是透過下方選單選取喔～"""
-
+    
+    rich_menu_to_create = RichMenu(
+        size=RichMenuSize(width=2500, height=843),
+        selected=False,
+        name="Nice richmenu",
+        chat_bar_text="Tap here",
+        areas=[RichMenuArea(
+            bounds=RichMenuBounds(x=0, y=0, width=2500, height=843),
+            action=URIAction(label='Go to line.me', uri='https://line.me'))]
+    )
+    rich_menu_id = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
     rich_menu = line_bot_api.get_rich_menu(rich_menu_id)
+
 
     button_template_message =ButtonsTemplate(
                                     thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
@@ -139,6 +139,19 @@ def handle_message(event):
 中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt
 
 Hi-health technology co.： https://github.com/bocheng47/hihealth"""
+
+    rich_menu_to_create = RichMenu(
+        size=RichMenuSize(width=2500, height=843),
+        selected=False,
+        name="Nice richmenu",
+        chat_bar_text="Tap here",
+        areas=[RichMenuArea(
+            bounds=RichMenuBounds(x=0, y=0, width=2500, height=843),
+            action=URIAction(label='Go to line.me', uri='https://line.me'))]
+    )
+    rich_menu_id = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
+    rich_menu = line_bot_api.get_rich_menu(rich_menu_id)
+
 
     button_template_message =ButtonsTemplate(
         thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
