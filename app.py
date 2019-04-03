@@ -48,7 +48,7 @@ def handle_follow(event):
     
     rich_menu_to_create = RichMenu(
         size=RichMenuSize(width=2500, height=843),
-        selected=False,
+        selected=True,
         name="Nice richmenu",
         chat_bar_text="Tap here",
         areas=[RichMenuArea(
