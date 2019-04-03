@@ -69,7 +69,7 @@ def handle_follow(event):
                                             label='自我介紹', text='自我介紹'   
                                         ),
                                         MessageTemplateAction(
-                                            label='程式能力', text='程式能力'
+                                            label='程式語言', text='程式語言'
                                         ),
                                         MessageTemplateAction(
                                             label='工作經驗', text='工作經驗'
@@ -140,19 +140,6 @@ def handle_message(event):
 
 Hi-health technology co.： https://github.com/bocheng47/hihealth"""
 
-    rich_menu_to_create = RichMenu(
-        size=RichMenuSize(width=2500, height=843),
-        selected=False,
-        name="Nice richmenu",
-        chat_bar_text="Tap here",
-        areas=[RichMenuArea(
-            bounds=RichMenuBounds(x=0, y=0, width=2500, height=843),
-            action=URIAction(label='Go to line.me', uri='https://line.me'))]
-    )
-    rich_menu_id = line_bot_api.create_rich_menu(rich_menu=rich_menu_to_create)
-    rich_menu = line_bot_api.get_rich_menu(rich_menu_id)
-
-
     button_template_message =ButtonsTemplate(
         thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
         title='施柏丞自我介紹Line Rob', 
@@ -163,7 +150,7 @@ Hi-health technology co.： https://github.com/bocheng47/hihealth"""
             label='自我介紹', text='自我介紹'   
         ),
         MessageTemplateAction(
-            label='程式能力', text='程式能力'
+            label='程式語言', text='程式語言'
         ),
         MessageTemplateAction(
             label='工作經驗', text='工作經驗'
@@ -183,7 +170,7 @@ Hi-health technology co.： https://github.com/bocheng47/hihealth"""
             TextSendMessage(text=intro),
             StickerSendMessage(package_id=1, sticker_id=114),])
 
-    elif '程式能力' in msg :
+    elif '程式語言' in msg :
         line_bot_api.reply_message(event.reply_token,
             TextSendMessage(text=ability))
 
