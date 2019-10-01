@@ -122,23 +122,23 @@ def handle_message(event):
 
     experience = """（一）中央資管系網站開發
 
-時間：2018/08-至今
+時間：2019/07-2019/09
 
 職責：負責系網站全端開發與架設、資料上傳、提供網頁架構圖與程式註解。藉此深入學習PHP、MySQL、Laravel、Git共同開發、MVC架構；在這5人團隊中，我負責團隊的組織，以及與系辦接洽的工作。並從中學習團隊間的互相合作，以及一起討論UI/UX設計，取得共識，並互相指導，提升技術能力。
 
 
 (二) 您好健康有限公司(程式設計實習生)
 
-時間：2018/08-至今
+時間：2018/08-2019/02
 
 職責：負責網頁前端與後端設計、管理與開發後台、產品測試、UI設計；在團隊中，我常常負責支援公司的工程師，以及對產品提出具體性的建議，也因為我的實質建議，在產品及Code設計也獲得改善，在大多時候需要獨自思考並解決問題，以及如何跳脫框架思考。在過程中建立工作上的自主性、創意和成長經驗。
 """
 
     github = """Line Rob： https://github.com/bocheng47/LINE_bocheng
 
-中央資管系網站(測試中)： https://github.com/bocheng47/ncu_immgt
+演算法視覺化 Sort_Visualization： https://github.com/bocheng47/Sort_Visualization
 
-Hi-health technology co.： https://github.com/bocheng47/hihealth"""
+Knight Tour List Comprehension： https://github.com/bocheng47/Knight_tour_List_Comprehension"""
 
     button_template_message =ButtonsTemplate(
         thumbnail_image_url="https://i.imgur.com/mNnvVVe.jpg",
